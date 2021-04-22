@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const path = require("path");
 
-router.get("/api/notes", (req, res) => {
+router.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"));
+    // console.log(res.json)
 })
 
 router.get("*", (req, res) => {
