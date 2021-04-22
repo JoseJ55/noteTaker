@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const note = require('../db/note')
 
-router.get("/notes", (req, res) => {
-    const notes = note.read()
-    return res.json(notes);
+router.get("/", (req, res) => {
+    note.read().then((notes) => res.json(JSON.parse(notes)));
 })
+
+router.get('/api/notes', (req, res) => {
+    note.allNotes().then((notes) => res.json(notes));
+})
+
 
 module.exports = router
