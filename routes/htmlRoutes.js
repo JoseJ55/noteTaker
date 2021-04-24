@@ -6,7 +6,7 @@ router.get("/notes", (req, res) => {
     // console.log(res.json)
 })
 
-router.get("*", (req, res) => {
+router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 })
 

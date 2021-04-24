@@ -15,6 +15,14 @@ class Note {
             return parseNotes;
         })
     }
+
+    write(title, text) {
+        let data = {
+            title: title,
+            text: text
+        }
+        fs.writeFile("'db/db.json", data)
+    }
 }
 
 module.exports = new Note();
